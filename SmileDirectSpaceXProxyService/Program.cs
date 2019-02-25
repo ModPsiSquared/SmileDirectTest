@@ -10,7 +10,10 @@ namespace SmileDirect.SpaceXProxyService
     {
         public static void Main(string[] args)
         {
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+
+            var aspnetEnvironment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+            var logger = NLogBuilder.ConfigureNLog($"nlog.{aspnetEnvironment}.config").GetCurrentClassLogger();
             try
             {
                 logger.Debug("init main");

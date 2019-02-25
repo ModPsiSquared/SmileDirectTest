@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging.Internal;
 
 namespace SmileDirect.SpaceXProxyServiceTest
 {
-    class ValuesControllerLoggerFake : ILogger<LaunchPadController>
+    class LaunchPadControllerLoggerFake : ILogger<LaunchPadController>
     {
         public static Exception ProvidedException { get; set; }
         public static string ProvidedMessage { get; set; }
